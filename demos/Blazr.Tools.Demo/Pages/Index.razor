@@ -1,0 +1,27 @@
+﻿@page "/"
+@inject IClipboardService _clipboardService
+@inject IJSRuntime _js
+
+<PageTitle>Index</PageTitle>
+
+<h1>Clipboard service</h1>
+<p>Enter some text below and click the copy button to copy the text.</p>
+<input @bind-value="sampleText" />
+@if (!string.IsNullOrWhiteSpace(sampleText))
+{
+    <button @onclick="Copy">Copy</button>
+}
+
+@code {
+    string? sampleText = "";
+
+    async Task Copy()
+    {
+        var result = await _clipboardService.CopyText(sampleText!);
+        if(result.Succeeded){
+            await _js.InvokeVoidAsync("alert", "Text copied");
+        }else{
+            await _js.InvokeVoidAsync("alert", "Failed to copy text: "+ result.Error);
+        }
+    }
+}

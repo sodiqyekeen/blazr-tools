@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<SignAssembly>False</SignAssembly>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<Version>0.1.0</Version>
+		<Authors>Sodiq Olalekan Yekeen</Authors>
+		<RepositoryUrl>https://github.com/sodiqyekeen/blazr-tools</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/sodiqyekeen/blazr-tools</PackageProjectUrl>
+		<PackageTags>blazor, clipboard</PackageTags>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BuildBundlerMinifier" Version="3.2.449">
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.9" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,11 @@
+[
+  {
+    "outputFileName": "wwwroot/js/blazrtools.min.js",
+    "inputFiles": [ "wwwroot/js-src/clipboardHandler.js" ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]
